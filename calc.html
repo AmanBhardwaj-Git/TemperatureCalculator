@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temperature Converter from celcius to farenhiet">
+    <meta name="keywords" content="Html, css,HTML5, CSS3, convertor,celcius,fahrenhiet,Temperature">
+    <meta name="author" content="Aman Bhardwaj">
+ 
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            background: url(https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2020/02/20114143/celcius.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+
+        }
+
+        .container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            border: 2px solid black;
+            height: 400px;
+            background: transparent;
+            border-radius: 16px;
+            box-shadow: inset 4px 4px 20px rgba(0, 0, 0, 0.831);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.918);
+
+        }
+
+        p {
+            height: 100px;
+            text-align: center;
+            padding-top: 35px;
+            font-size: 25px;
+            text-align: left;
+            padding-left: 10px;
+            width: 90%;
+            color: rgb(213, 245, 169);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: 3px 3px 1px rgb(20, 20, 16);
+            margin-bottom: 20px;
+
+        }
+
+        button {
+            width: 200px;
+            background-color: rgb(88, 139, 40);
+            border: 3px solid rgb(145, 151, 145);
+            box-shadow: inset 2px 2px 3px rgb(62, 67, 62);
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(231, 234, 217);
+            text-shadow: 1px 1px 5px black;
+            height: 45px;
+
+        }
+
+        label {
+            padding-right: 60px;
+            font-size: 22px;
+            height: 100px;
+            font-weight: 600;
+            color: rgb(250, 255, 197);
+            justify-self: flex-start;
+            text-shadow: 1px 1px 2px rgb(16, 18, 10);
+        }
+
+        #temp-calc {
+            width: 80%;
+            height: 10%;
+            font-size: 19px;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: rgb(255, 255, 255);
+        }
+
+        ::placeholder {
+            color: rgba(238, 255, 0, 0.543);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="temp-calc">Convert<br><br> Celcius to farenhiet</label>
+        <input placeholder="Enter Celcius" type="number" id="temp-calc" />
+
+        <p>Farenhiet : <span id="show-out"></span> </p>
+        <button onclick="doCalc()">Convert</button>
+    </div>
+    <script>
+        let getInput = document.getElementById("temp-calc");
+        let showOutput = document.getElementById("show-out");
+        function doCalc() {
+            showOutput.innerHTML = (getInput.value * 1.81) + 32;
+            console.log(showOutput.innerHTML)
+        }
+
+    </script>
+</body>
+
+</html>
